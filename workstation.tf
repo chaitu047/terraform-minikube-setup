@@ -2,7 +2,7 @@ module "ec2_instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
   name          = "workstation"
-  ami           = "ami-0f3c7d07486cad139"
+  ami           = "ami-0aedf6b1cb669b4c7"
   instance_type = "t2.micro"
   key_name      = "dev-ssh"
   #monitoring             = true
