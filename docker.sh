@@ -55,3 +55,15 @@ usermod -aG docker centos
 VALIDATE $? "added centos user to docker group"
 
 echo -e "$R Logout and login again $N"
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+VALIDATE $? "download kubectl"
+
+chmod +x kubectl
+
+VALIDATE $? "provide executable permissions to kubectl"
+
+mv ./kubectl /usr/local/bin/kubectl
+
+VALIDATE $? "move kubectl to exec binaries"
